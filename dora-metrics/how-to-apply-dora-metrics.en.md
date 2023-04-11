@@ -46,6 +46,8 @@ class:
 
 ---
 
+<!-- header: `Deployment Frequency` `Lead Time for Changes` `Change Failure Rate` `Mean Time to Recovery` -->
+
 # **Our Definition of the metrics**
 
 `How is a deployment defined?`
@@ -57,6 +59,8 @@ class:
 
 ---
 
+<!-- header: `Lead Time for Changes` -->
+
 # **Our Definition of the metrics**
 
 `How is the first code commit defined?`
@@ -67,6 +71,8 @@ class:
 
 ---
 
+<!-- header: `Change Failure Rate` `Mean Time to Recovery` -->
+
 # **Our Definition of the metrics**
 
 `How is change failure defined?`
@@ -76,6 +82,8 @@ class:
 - Is it considered a service encounters a minor issue that does not affect normal use?
 
 ---
+
+<!-- header: '' -->
 
 # **Consequences of Blindly Pursuing DORA Metrics**
 
