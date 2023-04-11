@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2.7.0
+    - uses: actions/checkout@v3
     - run: npx @marp-team/marp-cli@latest --input-dir .
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
