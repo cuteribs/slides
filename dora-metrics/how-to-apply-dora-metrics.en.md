@@ -8,7 +8,7 @@ class:
   - invert
 ---
 
-# **DORA Metrics in Practice**
+# **DORA Metrics in Practice** Part 1
 
 > Make the decision first, then implement it.
 
