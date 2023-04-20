@@ -36,8 +36,8 @@ class:
 
 ![bg right 100%](./parrallel-jobs.png)
 
-- **`Parallelized`** pipeline jobs for OVD.
 - **`Enhanced`** and **`Dockerized`** self-hosted agent with pre-setup tools/caching.
+- **`Parallelized`** pipeline jobs for OVD.
 - **`Automated`** Data Validator Schema syncing process
 
 ---
