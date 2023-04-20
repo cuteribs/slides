@@ -50,4 +50,16 @@ class:
 
 ---
 
+> OVD is currently the `leading` project on Veracode
+
+![bg right 100%](./ovd-sast.png)
+
+---
+
+> OVD is currently the `only active` project on Veracode Agent-Based SCA
+
+![bg right 100%](./ovd-sca.png)
+
+---
+
 # Thank you
