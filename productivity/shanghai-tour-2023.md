@@ -42,11 +42,13 @@ class:
 
 ---
 
+<!-- header: `OVD` `DW: DataWorkbench` `VAP` `Marketplace` `PLA: Veracity Platform Analytics` -->
+
 # **Productivity Improvement to Security**
 
 - `Discovered` and `resolved` token security issue for Data Workbench.
 - `Applied` Veracode SCA and SAST for OVD with best practises.
-- `Assisted` Veracode onboarding for teams/projects.
+- `Assisted` Veracode onboarding for multiple teams/projects.
 
 ---
 
