@@ -20,7 +20,7 @@ class:
 
 # **Productivity Improvement to Coding**
 
-## Initialized/Assisted `>7` projects to adapter Solution Packages.
+## Initialized/Assisted `>7` projects to adapt Solution Packages.
 
 - **`Accelerated`** Veracity authentication implementation
 - **`Reduced`** the learning cost/curve of `OAuth/OIDC protocal`/`Token caching`/`Caching security`.
@@ -52,11 +52,16 @@ class:
 
 > OVD is currently the `leading` project on Veracode
 
+- Scan 'My Code' only and correctly, no more no less.
+- Identify all false positives and fix the rest.
+
 ![bg right 100%](./ovd-sast.png)
 
 ---
 
 > OVD is currently the `only active` project on Veracode Agent-Based SCA
+
+- Scan SBOM files only.
 
 ![bg right 100%](./ovd-sca.png)
 
