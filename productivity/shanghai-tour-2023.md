@@ -52,6 +52,8 @@ class:
 
 ---
 
+<!-- header: '' -->
+
 > OVD is currently the `leading` project on Veracode
 
 - Scan 'My Code' only and correctly, no more no less.
