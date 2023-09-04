@@ -94,7 +94,7 @@ srcclr scan ./ --scan-collectors "yarn"
 | Analysis time | 250 seconds | 
 | User | eric | 
 | Project | /mnt/c/git/dnv/SolutionPackage/samples/Web/ClientApp | 
-| Package Manager(s) | Yarn | 
+| Package Manager(s) | Yarn| 
 | | | 
 | **Open-Source Libraries** | | 
 | Total Libraries | 189 | 
@@ -109,21 +109,53 @@ srcclr scan ./ --scan-collectors "yarn"
 | High Risk Vulnerabilities | 0 | 
 | Medium Risk Vulnerabilities | 1 | 
 | Low Risk Vulnerabilities | 0 | 
-| | | 
-| **Licenses** | | 
-| Unique Library Licenses | 4 | 
-| Libraries Using GPL | 0 | 
-| Libraries With High Risk License | 0 | 
-| Libraries With Medium Risk License | 0 | 
-| Libraries With Low Risk License | 110 | 
-| Libraries With Multiple Licenses | 4 | 
-| Libraries With Unassessable License | 7 | 
-| Libraries With Unrecognizable License | 0 | 
 
 | Vulnerabilities - Public Data ||||
 | --- | --- | --- | --- |
 | CVE-2021-44906 | Critical Risk | Prototype Pollution | minimist 1.2.5 |
 | CVE-2022-0536 | Medium Risk | Information Disclosure | follow-redirects 1.14.7 |
+
+| Licenses ||
+| :--- | ---: |
+| Unique Library Licenses | 8 |
+| Libraries Using GPL | 0 |
+| Libraries With High Risk License | 0 |
+| Libraries With Medium Risk License | 0 |
+| Libraries With Low Risk License | 190 |
+| Libraries With Multiple Licenses | 2 |
+| Libraries With Unassessable License | 2 |
+| Libraries With Unrecognizable License | 1 |
+
+| Issues |||||
+| :--- | --- | --- | --- | --- |
+| Issue ID | Issue Type | Severity | Description | Library Name & Version In Use |
+| 207435786 | Vulnerability | 4.3 | CVE-2022-0536: Information Disclosure | follow-redirects 1.14.7 |
+| 207435787 | Vulnerability | 7.5 | CVE-2021-44906: Prototype Pollution | minimist 1.2.5 |
+| 207435788 | Outdated Library | 3.0 | Latest version at scan: 0.2.0 | @fortawesome/react-fontawesome 0.1.16 |
+| 207435789 | Outdated Library | 3.0 | Latest version at scan: 17.0.1-nightly.2307-10 | @microsoft/applicationinsights-react-js 3.2.2 |
+| 207435790 | Outdated Library | 3.0 | Latest version at scan: 3.0.3-nightly3.2308-06 | @microsoft/applicationinsights-web 2.7.2 |
+| 207435791 | Outdated Library | 3.0 | Latest version at scan: 3.42.0 | apexcharts 3.36.0 |
+| 207435792 | Outdated Library | 3.0 | Latest version at scan: 1.5.0 | axios 0.24.0 |
+| 207435793 | Outdated Library | 3.0 | Latest version at scan: 2.3.2 | classnames 2.3.1 |
+| 207435794 | Outdated Library | 3.0 | Latest version at scan: 7.0.0-alpha.0 | connected-react-router 6.9.2 |
+| 207435795 | Outdated Library | 3.0 | Latest version at scan: 3.1.0 | d3-format 2.0.0 |
+| 207435796 | Outdated Library | 3.0 | Latest version at scan: 5.3.0 | history 4.10.1 |
+| 207435797 | Outdated Library | 3.0 | Latest version at scan: 3.0.0-beta.1 | mapbox-gl 2.11.1 |
+| 207435798 | Outdated Library | 3.0 | Latest version at scan: 8.1.0 | query-string 7.1.3 |
+| 207435799 | Outdated Library | 3.0 | Latest version at scan: 1.4.1 | react-apexcharts 1.4.0 |
+| 207435800 | Outdated Library | 3.0 | Latest version at scan: 18.3.0-next-992911981-20220718 | react-dom 18.2.0 |
+| 207435801 | Outdated Library | 3.0 | Latest version at scan: 7.1.5 | react-map-gl 6.1.21 |
+| 207435802 | Outdated Library | 3.0 | Latest version at scan: 9.0.0-alpha.0 | react-redux 7.2.6 |
+| 207435803 | Outdated Library | 3.0 | Latest version at scan: 6.15.0 | react-router-dom 5.3.0 |
+| 207435804 | Outdated Library | 3.0 | Latest version at scan: 7.0.1 | react-swipeable 6.2.0 |
+| 207435805 | Outdated Library | 3.0 | Latest version at scan: 1.0.20 | react-virtualized-auto-sizer 1.0.6 |
+| 207435806 | Outdated Library | 3.0 | Latest version at scan: 10.0.0-alpha.17 | react-window 1.8.6 |
+| 207435807 | Outdated Library | 3.0 | Latest version at scan: 18.3.0-next-992911981-20220718 | react 18.2.0 |
+| 207435808 | Outdated Library | 3.0 | Latest version at scan: 1.2.3 | redux-saga 1.1.3 |
+| 207435809 | Outdated Library | 3.0 | Latest version at scan: 5.0.0-beta.0 | redux 4.1.2 |
+| 207435810 | Outdated Library | 3.0 | Latest version at scan: 5.0.0-alpha.2 | reselect 4.1.5 |
+
+
 
 ## Scan Dockerfile
 
