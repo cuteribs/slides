@@ -94,7 +94,7 @@ srcclr scan ./ --scan-collectors "yarn"
 | Analysis time | 250 seconds | 
 | User | eric | 
 | Project | /mnt/c/git/dnv/SolutionPackage/samples/Web/ClientApp | 
-| Package Manager(s) | MSBuildDotNet | 
+| Package Manager(s) | Yarn | 
 | | | 
 | **Open-Source Libraries** | | 
 | Total Libraries | 189 | 
