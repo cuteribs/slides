@@ -83,6 +83,57 @@ alias p-scan='java -jar ~/pipeline-scan.jar'
 p-scan -f veracode.tar.gz
 ```
 
+### Result
+
+```
+Scan Summary:
+PIPELINE_SCAN_VERSION: 23.8.0-0
+DEV-STAGE: DEVELOPMENT
+SCAN_ID: 4be9d4ec-96fa-4a91-ab94-a3bb44047876
+SCAN_STATUS: SUCCESS
+SCAN_MESSAGE: Scan successful. Results size: 24496 bytes
+====================
+Analysis Successful.
+====================
+
+==========================
+Found 1 Scannable modules.
+==========================
+veracode/Veracode.Test.dll
+
+===================
+Analyzed 1 modules.
+===================
+veracode/Veracode.Test.dll
+
+===================
+Analyzed 11 issues.
+===================
+----------------------------------
+Found 7 issues of Medium severity.
+----------------------------------
+CWE-259: Use of Hard-coded Password: mnt/c/git/dnv/veracode.test/program.cs:30
+CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes: mnt/c/git/dnv/veracode.test/program.cs:43
+CWE-352: Cross-Site Request Forgery (CSRF): mnt/c/git/dnv/veracode.test/program.cs:43
+CWE-117: Improper Output Neutralization for Logs: mnt/c/git/dnv/veracode.test/program.cs:49
+CWE-117: Improper Output Neutralization for Logs: mnt/c/git/dnv/veracode.test/program.cs:50
+CWE-113: Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting'): mnt/c/git/dnv/veracode.test/program.cs:59
+CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes: mnt/c/git/dnv/veracode.test/program.cs:101
+-------------------------------
+Found 4 issues of Low severity.
+-------------------------------
+CWE-1174: ASP.NET Misconfiguration: Improper Model Validation: mnt/c/git/dnv/veracode.test/program.cs:21
+CWE-1174: ASP.NET Misconfiguration: Improper Model Validation: mnt/c/git/dnv/veracode.test/program.cs:43
+CWE-209: Information Exposure Through an Error Message: mnt/c/git/dnv/veracode.test/program.cs:54
+CWE-1174: ASP.NET Misconfiguration: Improper Model Validation: mnt/c/git/dnv/veracode.test/program.cs:101
+
+=========================
+FAILURE: Found 11 issues!
+=========================
+```
+
+
+
 ## Veracode JavaAPI Wrapper Parameters
 
 ```bash
