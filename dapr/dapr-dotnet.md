@@ -12,8 +12,6 @@ footer: 'DNV Feb. 2025'
 
 -->
 
-![bg bottom: 20%](../assets/dapr.svg)
-
 #  在 .NET 微服务中应用 Dapr：从配置到实践
 
 ---
