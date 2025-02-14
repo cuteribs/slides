@@ -73,22 +73,25 @@ header: '在 .NET 微服务中应用 Dapr：从配置到实践 - 3. 演示项目
 
 ### 项目结构
 ```bash
-├── OrderService (ASP.NET Core)
-├── InventoryService (ASP.NET Core)
-├── docker-compose.yml
+└── src/  # Dapr 组件配置
+    ├── order (ASP.NET Core)
+    ├── product (ASP.NET Core)
+    └── web (ASP.NET Core)
 └── components/  # Dapr 组件配置
-    ├── redis-pubsub.yaml
-    ├── redis-state.yaml
-    └── zipkin.yaml
+    ├── pubsub.yaml
+    ├── configstore.yaml
+    └── statestore.yaml
 ```
 
 ---
 
 ### 功能流程
-- 用户提交订单 → `OrderService`
-- 订单服务通过 Dapr 调用 `InventoryService` 检查库存
-- 库存更新通过 `Pub/Sub` 异步通知
-- 使用 Dapr 状态管理持久化数据
+- `product` 通过  Dapr (`configstore`) 获取数据库连接
+- 用户浏览产品 → `web` 通过 Dapr (`service Invocation`) 调用 `product`
+- 用户创建/取消订单 → `web` 通过 Dapr (`pubsub`) 调用 `order`
+- `order` 通过 Dapr (`actor`) 启动 `order actor` 执行创建/取消订单任务
+- `order actor` 通过 Dapr (`statestore`) 创建/取消订单
+- `order` 更新通过 Dapr (`pubsub`) 通知 `web`
 
 ---
 
@@ -101,19 +104,43 @@ header: '在 .NET 微服务中应用 Dapr：从配置到实践 - 4. 配置与开
 ### 步骤 1：安装 Dapr
 ```bash
 # 使用 Docker 快速初始化
-dapr init --runtime-version=1.10.0
+dapr init
 ```
 
 ### 步骤 2：添加 .NET SDK 包
 ```bash
 dotnet add package Dapr.AspNetCore
-dotnet add package Dapr.Client
+dotnet add package Dapr.Extensions.Configuration
+dotnet add package Dapr.Actors.AspNetCore
 ```
 
 ### 步骤 3：服务注册（Program.cs）
 ```csharp
-var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddControllers().AddDapr(); // 关键注入
+services.AddDaprClient();	// 注入 DaprClient
+```
+
+---
+
+```csharp
+// 注册 Dapr Actor 并在 ASP.NET Core 中启用
+services.AddActors(o => o.Actors.RegisterActor<OrderActor>());
+app.MapActorsHandlers();
+```
+
+```csharp
+// 加载 Dapr Configuration
+configuration.AddDaprConfigurationStore(
+    "cofigstore", 
+    [], 
+    new DaprClientBuilder().Build(), 
+    TimeSpan.FromSeconds(5)
+);
+```
+
+```csharp
+// 启用 Dapr pubsub
+app.UseCloudEvents();
+app.MapSubscribeHandler();
 ```
 
 ---
@@ -121,18 +148,15 @@ builder.Services.AddControllers().AddDapr(); // 关键注入
 ### 步骤 4：实现服务调用
 ```csharp
 // OrderController.cs
-[HttpPost]
-public async Task<IActionResult> CreateOrder([FromBody] Order order)
+app.MapGet("/products", async (DaprClient client) =>
 {
-    // 通过 Dapr Sidecar 调用库存服务
-    var result = await _daprClient.InvokeMethodAsync<InventoryRequest, InventoryResponse>(
-        HttpMethod.Post, 
-        "inventoryservice", 
-        "api/inventory/check",
-        new InventoryRequest { ProductId = order.ProductId }
-    );    
-    // 处理业务逻辑...
-}
+	var items = await client.InvokeMethodAsync<ProductItem[]>(
+        HttpMethod.Get, 
+        "product", 
+        "/list"
+    );
+    return items;
+});
 ```
 
 ### 步骤 5：运行服务
