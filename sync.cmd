@@ -1,5 +1,3 @@
-start . 
-
 start /b git pull
 
 git add .
