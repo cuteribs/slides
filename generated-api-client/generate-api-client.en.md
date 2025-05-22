@@ -10,11 +10,18 @@ footer: 'By [Eric Liu](mailto:li.eric.liu@dnv.com) @ DNV May 2025'
 backgroundColor: #10204A
 color: #ffffff
 ---
-<!-- 
--->
+
 # **Stop Coding API Access by Hand**
 
  _Automating API Client/SDK Generation with Swagger/OpenAPI_
+
+<!--
+Presenter notes:
+- Time management, time speak on each agenda
+- Interaction with audience
+- Realworld examples
+- Restate the benefits for the audience
+-->
 
 ---
 
