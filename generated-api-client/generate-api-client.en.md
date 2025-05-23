@@ -70,10 +70,24 @@ header: 'Stop Coding API Access by Hand'
 - Unit Test Nightmare
 - - Multiple test cases for each API endpoint
 - - Preparing for lot of test data
--
+
 -->
 
 ---
+
+<!-- header: The `PITFALLS` of hand coding API access -->
+
+![](./swagger01.png)
+
+---
+
+![](./swagger02.png)
+
+---
+
+<!-- 
+header: 'Stop Coding API Access by Hand'
+-->
 
 ## **The `MAGIC` of API client generation**
 
@@ -87,23 +101,35 @@ header: 'Stop Coding API Access by Hand'
 
 ## **The `BATTLE` between hand-crafted and machine-generated**
 
+Hand-crafted API Client
 ```csharp
-// Manual HttpClient call
-public async Task<UserDto> GetUserByIdManualAsync(string userId) {
+public class ManualApiClient {
+  public async Task<UserDto> GetUserById(string userId) {
     var request = new HttpRequestMessage(HttpMethod.Get, $"api/users/{userId}");
     // ... set Headers, Accept, etc. ...
     var response = await _httpClient.SendAsync(request);
     response.EnsureSuccessStatusCode(); // Or manual check
     var json = await response.Content.ReadAsStringAsync();
     return JsonSerializer.Deserialize<UserDto>(json, _options);
+  }
+
+  public record UserDto(	
+    [JsonPropertyName("id")] string Id,
+    [JsonPropertyName("name")] string Name,
+    [JsonPropertyName("email")] string Email
+  )
 }
 ```
 
+---
+
+## **The `BATTLE` between hand-crafted and machine-generated**
+
+machine-generated API Client
+
 ```csharp
-// Generated Client call
-public Task<UserDto> GetUserWithGeneratedClientAsync(string userId) {
-    return _apiClient.UsersGETAsync(userId);
-}
+var apiClient = new GeneratedApiClient();
+var user = await apiClient.GetUserById(userId);
 ```
 
 ---
@@ -128,7 +154,17 @@ public Task<UserDto> GetUserWithGeneratedClientAsync(string userId) {
  |**Dev. Efficiency**|Low|High|
  |**Error Likelihood**|High (typos, logical errors)|Low (based on specification)|
  |**Maintainability**|Poor|Good|
+ |**Distribution**|Manual copying|To package feeds|
  
+---
+
+## **The `VICTORY` is that business got generated**
+
+The Project/App equipped with generated (besides 3rd party) API Client:
+- OVD - all the access to both internal (4) & external (5) APIs
+- DataWorkbench - 
+
+
 ---
 
 ## **The `DOUBT` you still got**
