@@ -162,8 +162,7 @@ var user = await apiClient.GetUserById(userId);
 
 The Project/App equipped with generated (besides 3rd party) API Client:
 - OVD - all the access to both internal (4) & external (5) APIs
-- DataWorkbench - 
-
+- DataWorkbench - more than 15 internal APIs
 
 ---
 
