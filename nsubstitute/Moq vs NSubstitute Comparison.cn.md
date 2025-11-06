@@ -1,8 +1,7 @@
 ---
 marp: true
-theme: uncover
+theme: default
 header: "Moq vs NSubstitute: .NET 模拟框架大对决"
-footer: © 2024 - A Detailed Comparison
 class:
   - invert
   - lead
