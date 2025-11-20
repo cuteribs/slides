@@ -7,11 +7,13 @@ footer: "SCA Demo • 15m"
 ---
 
 # Revisiting SCA (Software Composition Analysis)
+
 Goal: Show why dependency risk matters & how to act fast.
 
 ---
 
-## Run Sheet (Timebox)
+## Agenda
+
 1. Problem & Impact  
 2. Core Concept: What SCA Solves 
 3. Node Demo `lodashCase` 
@@ -20,6 +22,7 @@ Goal: Show why dependency risk matters & how to act fast.
 ---
 
 ## Problem & Impact
+
 - 70–90% of app code = dependencies.
 - Exploit speed: hours after CVE disclosure.
 - Silent risks: prototype pollution, malicious publish, license traps.
