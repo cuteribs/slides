@@ -35,7 +35,7 @@ Message: Inventory + continuous scanning are baseline hygiene.
 
 - Detects: Known CVEs, malicious packages, license incompatibilities, abandoned libs.
 - Outputs: Alerts, upgrade paths, SBOM (dependency bill of materials).
-- Differs from SAST: Looks at what you import, not logic you write.
+- Differs from SAST: Looks at packages what you import, not source code you write.
 	- `package-lock.json` for NPM
 	- `obj\project.assets.json` for NuGet
 
