@@ -8,7 +8,7 @@ backgroundImage: url('dnv-bg.png')
 
 # Revisiting SCA (Software Composition Analysis)
 
-Goal: Show why dependency risk matters & how to act fast.
+Goal: Show why dependency risk matters
 
 ---
 
