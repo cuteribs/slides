@@ -33,9 +33,11 @@ Message: Inventory + continuous scanning are baseline hygiene.
 
 ## What SCA Does
 
-Detects: Known CVEs, malicious packages, license incompatibilities, abandoned libs.
-Outputs: Alerts, upgrade paths, SBOM (dependency bill of materials).
-Differs from SAST: Looks at what you import, not logic you write.
+- Detects: Known CVEs, malicious packages, license incompatibilities, abandoned libs.
+- Outputs: Alerts, upgrade paths, SBOM (dependency bill of materials).
+- Differs from SAST: Looks at what you import, not logic you write.
+	- `package-lock.json` for NPM
+	- `obj\project.assets.json` for NuGet
 
 ---
 
