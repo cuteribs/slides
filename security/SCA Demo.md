@@ -3,7 +3,7 @@ marp: true
 title: SCA 15‑Minute Demo
 paginate: true
 theme: default
-footer: "SCA Demo • 15m"
+backgroundImage: url('dnv-bg.png')
 ---
 
 # Revisiting SCA (Software Composition Analysis)
